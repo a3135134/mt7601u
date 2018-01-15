@@ -4314,7 +4314,7 @@ VOID RtmpOsFreeSpinLock(NDIS_SPIN_LOCK *pLockOrg)
 	/* we will free all locks memory in RTMP_OS_FREE_LOCK() */
 	OS_NDIS_SPIN_LOCK *pLock;
 
-	pLock = (OS_NDIS_MINIPORT_TIMER *) (pLockOrg->pContent);
+	pLock = (OS_NDIS_SPIN_LOCK *) (pLockOrg->pContent);
 	if (pLock != NULL) {
 		OS_NdisFreeSpinLock(pLock);
 
